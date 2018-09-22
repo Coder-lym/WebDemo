@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#clock{
+				border: 1px solid #CCCCCC;
+				width: 200px;
+				height: 50px;
+				font-size: 3em;
+			}
+		</style>
+		<script type="text/javascript">
+			var s;
+			var index=0;
+			function start1(){
+				
+				s=setInterval(function(){
+					var p=document.getElementById("clock");
+					p.innerHTML=index++;
+				},100);
+			}
+			function stop1(){
+				clearInterval(s);
+			}
+		</script>
+	</head>
+	<body>
+		<!--秒表的屏幕-->
+		<p id="clock"></p>
+		<!--秒表的按钮-->
+		<p>
+			<button onclick="start1()">启动</button>
+			<button onclick="stop1()">暂停</button>
+			<button onclick="clear1()">清零</button>
+		</p>
+	</body>
+</html>

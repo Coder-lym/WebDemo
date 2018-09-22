@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>V客工作室</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="js/jquery-ui.min.css"/>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var c=0;
+				function run(){
+					c++;
+					if (c==6) {
+						$("#lun .box").css({'left':'0px'});
+						c=1;
+					}
+					var l=-772*c;
+					$("#lun .box").animate({'left':l+'px'},400);
+					if (c==5) {
+						$("#lun ul li").eq(0).css({'background':'red'}).siblings('li').css({'background':'burlywood'});
+					} else{
+						$("#lun ul li").eq(c).css({'background':'red'}).siblings('li').css({'background':'burlywood'});
+					}
+				}
+				var timer=setInterval(run,3000);
+				var t;
+				$("#lun ul li").mouseenter(function(){
+					clearTimeout(t);
+					clearInterval(timer);
+					t=setTimeout(function(){
+						timer=setInterval(run,3000);
+					},400)
+					c=$(this).index();
+					var left=c*-772;
+					$("#lun .box").stop().animate({'left':left+'px'},400);
+					$(this).css({'background':'red'}).siblings('li').css({'background':'burlywood'});
+				})
+				
+//				下拉菜单
+				var $li=$(".yju>li");
+				$li.hover(
+				function(){
+					$(this).children('ul').slideDown();
+				},
+				function(){
+					$(this).children('ul').slideUp();
+				})
+				
+				var f=0;
+				setInterval(function(){
+					f++;
+					if (f==4) {
+						$(".tu1").css({'top':'0px'});
+						f=1;
+					}
+					var e=f*-180;
+					$(".tu1").animate({'top':e+'px'},500);
+				},2500)
+			})
+		</script>
+	</head>
+	<body>
+		<div id="big">
+		 <div id="logo">
+			<img src="img/slogo.png" id="v"/><p id="f">V客工作室</p>
+		 </div>
+		 <div id="ad">
+			<img src="img/ad.png" id="by"/>
+		 </div>
+		 <div id="con">
+			<ul class="yju">
+				<li style="border-left:1px solid #83CFF3;width: 238px"><a href="http://mp.weixin.qq.com/s/XPat3e1jsS0SeXxMbyC5uA" target="_blank">V客简介</a></li>
+				<li><a href="">创新创业</a>
+				  <ul class="eju1">
+					<li><a href="http://cxcy.gsau.edu.cn/ckkj.htm" target="_blank">稼穑创客</a></li>
+					<li><a href="http://cxcy.gsau.edu.cn/index/sczc.htm" target="_blank">双创政策</a></li>
+					<li><a href="">蓝图规划</a></li>
+				  </ul>
+				</li>
+				<li><a href="">V客资源</a>
+				  <ul class="eju2">
+					<li><a href="spjc.html" target="_blank">视频教程</a></li>
+					<li><a href="wdsc.html" target="_blank">文档手册</a></li>
+					<li><a href="">网址汇总</a></li>
+				  </ul>
+				</li>
+				<li><a href="">业务合作</a>
+				  <ul class="eju3">
+					<li><a href="">网站建设</a></li>
+					<li><a href="">小程序开发</a></li>
+					<li><a href="">广告宣传</a></li>
+				  </ul>
+				</li>
+				<li><a href="">学习交流</a></li>
+			</ul>
+		 </div>
+		 <div id="x">
+		 	<div id="dt">
+		 	<div id="dtt">
+		 		<ul>
+		 			<li></li><p class="w3c">w3cschool最新动态</p>
+		 		</ul>
+		 	</div>
+		 	<div id="lun">
+			<div class="box">
+				<img src="img/v1.png"/>
+				<img src="img/v2.png"/>
+				<img src="img/v3.png"/>
+				<img src="img/v4.png"/>
+				<img src="img/v5.png"/>
+				<img src="img/v1.png"/>
+			</div>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		    </div>
+		 </div>
+		 <div id="news">
+			<div class="nt">
+				<img src="img/boder.png"/>
+				<ul>
+					<li></li><p class="w3c2">创新创业动态</p>
+				</ul>
+			</div>
+			<div class="ns">
+				<ul>
+				   <li><a href="" title="我校3名教师、伏羲创业导师入选教育部“全国万名优秀创新创业导师人才库”首批入库导师">我校3名教师、伏羲创业导师入选教育部“全国...</a></li>
+				   <li><a href="" title="兰州经济开发区第二届科技创新成果展在我校成功举办">兰州经济开发区第二届科技创新成果展在我校成...</a></li>
+				   <li><a href="" title="我校在第二届全国建筑类院校虚拟建造综合实践大赛中取得优异成绩">我校在第二届全国建筑类院校虚拟建造综合实践...</a></li>
+				   <li><a href="" title="甘肃农业大学创新创业学院与中博教育校企合作 暨创新创业实践基地签约仪式圆满成功">甘肃农业大学创新创业学院与中博教育校企合作...</a></li>
+				   <li><a href="" title="省就业服务管理局局长常文一行调研我校创新创业工作">省就业服务管理局局长常文一行调研我校创新创...</a></li>
+			       <li><a href="" title="兰州市2017年涉农创新创业EYB培训班在我校开班">兰州市2017年涉农创新创业EYB培训班在我校开...</a></li>
+				</ul>
+			</div>
+		 </div>
+		 </div>
+		 <div id="footer">
+		 	<div id="f1">
+		 		<ul>
+		 			<li class="f0"></li>
+		 			<li>案</li>
+		 			<li>例</li>
+		 			<li>展</li>
+		 			<li>示</li>
+		 		</ul>
+		 	</div>
+		 	<div id="f2">
+		 		<div class="tu1">
+		 			<img src="img/f1.jpg" style="margin-top: 14px;"/>
+		 			<img src="img/f2.jpg"/>
+		 			<img src="img/f3.jpg"/><br />
+		 			<img src="img/f4.jpg" style="margin-top: 23.5px"/>
+		 			<img src="img/f5.jpg"/>
+		 			<img src="img/f6.jpg"/><br />
+		 			<img src="img/f7.jpg" style="margin-top: 23.5px"/>
+		 			<img src="img/f8.jpg"/>
+		 			<img src="img/f9.jpg"/><br />
+		 			<img src="img/f1.jpg" style="margin-top: 23.5px"/>
+		 			<img src="img/f2.jpg"/>
+		 			<img src="img/f3.jpg"/>
+		 		</div>
+		 	</div>
+		 	<div id="f3">
+		 		<div id="j0">
+		 		<ul>
+		 		<li>友情链接：</li>
+		 	    <li><a href="http://www.gsau.edu.cn/">农大主页</a></li>
+		 		<li><a href="http://news.gsau.edu.cn/">新闻动态</a></li>
+		 		<li><a href="http://jiaowu.gsau.edu.cn/">教&nbsp;务&nbsp;处</a></li>
+		 		<li><a href="http://cxcy.gsau.edu.cn/">创新创业</a></li>
+		 		<li><a href="http://mp.weixin.qq.com/s/XPat3e1jsS0SeXxMbyC5uA">联系我们</a></li>
+		 		</ul>
+		 		</div>
+		 		<div id="j">
+		 			Copyright © 2017 &nbsp;&nbsp;V客工作室&nbsp;&nbsp; All rights reserved
+		 		</div>
+		    </div>
+		  </div>
+		</div>
+	</body>
+</html>

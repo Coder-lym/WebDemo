@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width:500px;
+				height:281.25px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var xy=1;
+				btn.onclick=function(){
+					if (xy==1) {
+						hd.style.display='none';
+						xy=2
+					} else if (xy==2) {
+						hd.style.display='block';
+						xy=1
+					}
+			    }
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点我显示/隐藏图片！" />
+		<br /><br />
+		<img src="2.jpg" id="hd"/>
+	</body>
+</html>

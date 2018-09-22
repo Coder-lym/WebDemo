@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			setInterval(function(){
+				var oldnum=btn.innerHTML;
+				var newnum=oldnum-1;
+				btn.innerHTML=newnum;
+				if (newnum==0) {
+					location.assign('http://www.baidu.com')
+				}
+			},1000)
+		</script>
+	</head>
+	<body>
+		<h1>亲爱的游客，<span id="btn">5</span>秒后跳转到注册页面！</h1>
+	</body>
+</html>

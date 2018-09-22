@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+			    margin: 0;
+			}
+			#box{
+				width: 250px;
+				height: 40px;
+				border: 2px solid black;
+				margin: 200px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#box ul{
+				list-style: none;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#box ul li{
+			    width: 250px;
+			    height: 40px;
+			    line-height: 40px;
+			    text-align: center;
+			}
+		</style>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var c=0;
+				setInterval(function(){
+					c++;
+					if (c==6) {
+						$("#box ul").css({'top':'0px'});
+						c=1;
+					}
+					var t=c*-40;
+					$("#box ul").animate({'top':t+'px'},500);
+				},2500)
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li style="background: orange">中国首艘国产航母要海试了</li>
+				<li style="background: greenyellow">杜特尔特东盟峰会措辞改变</li>
+				<li style="background: cyan">军报刊出将军一封亲笔信</li>
+				<li style="background: indianred">首艘国产航母最新进度曝光</li>
+				<li style="background: peru">俄在中国购加油机时猛抬价</li>
+				<li style="background: orange">中国首艘国产航母要海试了</li>
+			</ul>
+		</div>
+	</body>
+</html>

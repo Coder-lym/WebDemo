@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function disp_prompt(){
+			var length=prompt("请输入数值");
+			if (length>5) {
+				alert("大于5");
+			} else if(length>2){
+				alert("大于2");
+			} else{
+				alert("数值错误");
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<input type="button" onclick="disp_prompt()"  value="输出判断框"/>
+	</body>
+</html>

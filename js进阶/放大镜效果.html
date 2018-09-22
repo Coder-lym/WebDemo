@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#left{
+				width: 400px;
+				height: 400px;
+				background: url(small.jpg) no-repeat;
+				border: 2px solid black;
+				margin: 40px;
+				position: relative;
+				float: left;
+				cursor: crosshair;
+			}
+			#cover{
+				width: 400px;
+				height: 400px;
+				background: #000000;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+				filter:alpha(opacity=0);
+				
+			}
+			#box{
+				width: 220px;
+				height: 200px;
+				background: beige;
+				opacity: 0.6;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			#right{
+				width: 440px;
+				height: 400px;
+				border: 2px solid black;
+				float: left;
+				margin-top: 40px;
+				overflow: hidden;
+				position: relative;
+			}
+			#bb{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var left=document.getElementById("left");
+				var box=document.getElementById("box");
+				var right=document.getElementById("right");
+				var bb=document.getElementById("bb");
+				var cover=document.getElementById("cover");
+				cover.onmousemove=function(e){
+					var ev=window.event||e;
+					var mouse_left=ev.offsetX||ev.layerX;
+					var mouse_top=ev.offsetY||ev.layerY;
+					var box_left=mouse_left-110;
+					var box_top=mouse_top-100;
+					if (box_left<0) {
+						box_left=0;
+					}
+					if (box_left>180) {
+						box_left=180;
+					}
+					if (box_top<0) {
+						box_top=0;
+					}
+					if (box_top>200) {
+						box_top=200;
+					}
+					box.style.left=box_left+'px';
+					box.style.top=box_top+'px';
+					
+					var bb_left=box_left*-2;
+					var bb_top=box_top*-2;
+					bb.style.left=bb_left+'px';
+					bb.style.top=bb_top+'px';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="left">
+			<div id="box"></div>
+			<div id="cover"></div>
+		</div>
+		<div id="right">
+			<img src="big.jpg" id="bb"/>
+		</div>
+	</body>
+</html>

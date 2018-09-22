@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#ad{
+				width: 400px;
+				height: 150px;
+				background: url(z.jpg) no-repeat;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var ad=document.getElementById("ad");
+				var close=document.getElementById("close");
+				var win_w=document.documentElement.clientWidth;
+				var win_h=document.documentElement.clientHeight;
+				var max_w=win_w-ad.offsetWidth;
+				var max_h=win_h-ad.offsetHeight;
+				var x=1,y=1;
+				function run(){
+					var old_left=ad.offsetLeft;
+					var old_top=ad.offsetTop;
+					var new_left=old_left+x;
+					var new_top=old_top+y;
+					ad.style.left=new_left+'px';
+					ad.style.top=new_top+'px';
+					if (new_top==max_h) {
+						y=-1;
+					}
+					if (new_top==0) {
+						y=1;
+					}
+					if (new_left==max_w) {
+						x=-1;
+					}
+					if (new_left==0) {
+						x=1;
+					}
+				}
+				var timer=setInterval(run,10);
+				ad.onmouseover=function(){
+					clearInterval(timer);
+				}
+				ad.onmouseout=function(){
+					timer=setInterval(run,10);
+				}
+				close.onclick=function(){
+					ad.style.display='none';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ad">
+			<img src="3.jpg" id="close"/>
+		</div>
+	</body>
+</html>

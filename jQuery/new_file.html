@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var f=0;
+				setInterval(function(){
+					f++;
+					if (f==4) {
+						$(".tu1").css({'top':'0px'});
+						f=1;
+					}
+					var e=f*-180;
+					$(".tu1").animate({'top':e+'px'},500);
+				},2500)
+			})
+		</script>
+		<style type="text/css">
+			*{
+				padding: 0;
+	            margin: 0;
+			}
+			#f2{
+				margin: 50px auto;
+				width: 1148px;
+	            height: 180px;
+	            border: 1px solid black;
+			}
+			.tu1{
+				width: 1148px;
+	            height: 832px;
+	            padding: 0;
+	            margin: 0;
+	            position: relative;
+			}
+			.tu1 img{
+				margin-left: 95px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="f2">
+			<div class="tu1">
+		 			<img src="img/f1.jpg" style="margin-top: 14px;"/>
+		 			<img src="img/f2.jpg"/>
+		 			<img src="img/f3.jpg"/><br />
+		 			<img src="img/f4.jpg" style="margin-top: 23.5px"/>
+		 			<img src="img/f5.jpg"/>
+		 			<img src="img/f6.jpg"/><br />
+		 			<img src="img/f7.jpg" style="margin-top: 23.5px"/>
+		 			<img src="img/f8.jpg"/>
+		 			<img src="img/f9.jpg"/><br />
+		 			<img src="img/f1.jpg" style="margin-top: 23.5px"/>
+		 			<img src="img/f2.jpg"/>
+		 			<img src="img/f3.jpg"/>
+		 			
+		 			
+		 		</div>
+		</div>
+		
+	</body>
+</html>

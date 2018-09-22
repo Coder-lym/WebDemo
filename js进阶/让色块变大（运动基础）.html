@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd
+			{
+				height: 300px;
+				background: aquamarine;
+				margin: 0 auto;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function()
+			{
+			  btn.onclick=function(){
+			  	var old_width=hd.style.width;
+			  	var new_wdith=parseInt(old_width)+10;
+			  	hd.style.width=new_wdith+'px';
+			  }
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点我放大！" />
+		<div style="width: 400px" id="hd">
+			
+		</div>
+	</body>
+</html>

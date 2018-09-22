@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#hd{
+				width: 120px;
+				height: 100px;
+				position: absolute;
+				top:50px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				
+			  	var speed=10;
+				btn.onclick=function(){
+				  var timer=setInterval(function(){
+				  var old_left=hd.style.left;
+			  	  var new_left=parseInt(old_left)+speed;
+			  	  hd.style.left=new_left+'px';
+			  	      if (new_left==1350||new_left==0)
+			  	      {
+						speed=speed*-1;
+					  }
+					},100)
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点击运动！" />
+		<br /><br />
+		<img src="1.gif" id="hd" style="left:0;"/>
+	</body>
+</html>

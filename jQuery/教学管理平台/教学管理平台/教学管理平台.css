@@ -1,0 +1,99 @@
+@charset "utf-8";
+*{
+	margin:0;
+    padding:0;
+	}
+body{
+	background:#CCC;
+	}
+#logo{
+	width:1200px;
+	height:180px;
+	background:#2BA7BF;
+	margin:0 auto;
+	}
+#logo img{
+	margin-top:45px;
+	margin-left:30px;
+	width:400px;
+	height:90px;
+	float:left;
+	}
+#logo embed{
+	position:absolute;
+	right:100px;
+	width:700px;
+	height:180px;
+	}
+#center{
+	background:url(4.jpg) no-repeat;
+	background-size:contain;
+	height:456.6px;
+	width:1200px;
+	margin:0 auto;
+	}
+.ad{
+	line-height:130px;
+	text-align:right;
+	font-size:40px;
+	font-family:"黑体";
+	text-shadow:2px 2px 5px #C39;
+	width:400px;
+	height:456.6px;
+	float:left;
+	}
+.login{
+	text-align:center;
+	width:800px;
+	height:456.6px;
+	float:left;
+	font-size:18px;
+	line-height:45px;
+	}
+.login img{
+	width:250px;
+	margin-left:30px;
+	}
+.login select{
+	width:150px;
+	height:25px;
+	font-size:16px;
+	}
+.login input{
+	width:150px;
+	height:25px;
+	font-size:16px;
+	}
+input.but1{
+	margin-top:20px;
+	width:50px;
+	} 
+input.but2{
+	width:80px;
+	} 
+#footer{
+	clear:both;
+	width:1200px;
+	height:100px;
+	background:#2BA7BF;
+	margin:0 auto;
+	font-size:14px;
+	color:#FFF;
+	text-align:center;
+	}
+p{
+	height:30px;
+	line-height:30px;
+	padding-top:10px;
+	}
+a{
+	display:inline-block;
+	width:110px
+	height:51px;
+	color:#fff;
+	text-decoration:none;
+	}
+a:hover{
+	text-decoration:underline;
+	color:#FF6;
+	}

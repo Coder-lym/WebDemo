@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			#btn{
+				background:#0000FF;
+				margin:0 auto;
+				
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var speed=1;
+				setInterval(function(){
+					var old_width=btn.style.width;
+					var new_width=parseInt(old_width)+speed;
+					btn.style.width=new_width+'px';
+					if (new_width==500){
+						speed=speed*-1;
+						if(new_width==100){
+					  	speed=speed*1;
+					  }
+					 }
+				},10)
+			}
+		</script>
+	</head>
+	<body>
+		<div style="width:100px;height:100px" id="btn">
+			
+		</div>
+	</body>
+</html>

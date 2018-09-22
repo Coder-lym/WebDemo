@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function max(arr)
+		{
+			var temp=arr[0];
+			for (var i=0;i<arr.length;i++) {
+				if (temp<arr[i]) {
+					temp=arr[i];
+				}
+			}
+			return temp;
+		}
+			var shuzu=[1,56,23,6,43,87,3,5,55];
+			var re=max(shuzu);   //调用函数max()并传值
+			document.write(re);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

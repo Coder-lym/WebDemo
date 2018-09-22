@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var cityArray=new Array;
+			cityArray[0]=["请选择"];
+			cityArray[1]=["兰州市","定西市","庆阳市","平凉市","天水市"];
+			cityArray[2]=["西安市","宝鸡市","铜川市","咸阳市","延安市"];
+			cityArray[3]=["成都市","广元市","绵阳市","雅安市","巴中市"];
+			cityArray[4]=["武汉市","孝感市","黄冈市","荆州市","宜昌市"];
+		
+		    //根据所选择的省份写入城市
+		    function changeSel(){
+		    	//得到省份的选择索引以及相应的数组
+		    	var i=document.getElementById("selpro").selectedIndex;
+		    	var data=cityArray[i];
+		    	
+		    	//得到城市选择框对象
+		    	var selcity=document.getElementById("selcity");
+		    	//删除原有选项
+		    	while(selcity.childNodes.length>0){
+		    		selcity.removeChild(selcity.lastChild);
+		    	}
+		    	
+		    	//循环数组，写入新的option对象
+		    	for(var i=0;i<data.length;i++){
+		    		var optioncity=document.createElement("option");
+		    		optioncity.value=i;
+		    		optioncity.innerHTML=data[i];
+		    		selcity.appendChild(optioncity);
+		    	}
+		    }
+		
+		</script>
+	</head>
+	<body>
+		<form>
+			省：<select id="selpro" onchange="changeSel()">
+				<option>请选择</option>
+				<option>甘肃省</option>
+				<option>陕西省</option>
+				<option>四川省</option>
+				<option>湖北省</option>
+			</select>
+			市：<select id="selcity">
+				<option>请选择</option>
+			</select>
+		</form>
+	</body>
+</html>

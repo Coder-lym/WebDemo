@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#jd{
+				width: 790px;
+				height: 340px;
+				margin: 50px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#jd .box{
+				width: 4740px;
+				height: 340px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#jd .box img{
+				float: left;
+			}
+			#jd ul{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+			#jd ul li{
+				list-style: none;
+				float: left;
+				width: 100px;
+				height: 30px;
+				background:black;
+				line-height: 30px;
+				text-align: center;
+				color: white;
+				opacity: 0.4;
+				font-size: 14px;
+				font-family: "宋体";
+				margin-left: 1px;
+			}
+			#jd ul li:hover{
+				color: #c00;
+			}
+		</style>
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var c=0;
+				function run(){
+					c++;
+					if (c==6) {
+						$("#jd .box").css({'left':'0px'});
+						c=1;
+					}
+					var l=-790*c;
+					$("#jd .box").animate({'left':l+'px'},400);
+					if (c==5) {
+						$("#jd ul li").eq(0).css({'opacity':'0.7'}).siblings('li').css({'opacity':'0.4'});
+					} else{
+						$("#jd ul li").eq(c).css({'opacity':'0.7'}).siblings('li').css({'opacity':'0.4'});
+					}
+				}
+				var timer=setInterval(run,3000);
+				var t;
+				$("#jd ul li").click(function(){
+					clearTimeout(t);
+					clearInterval(timer);
+					t=setTimeout(function(){
+						timer=setInterval(run,3000);
+					},400)
+					c=$(this).index();
+					var left=c*-790;
+					$("#jd .box").stop().animate({'left':left+'px'},400);
+					$(this).css({'opacity':'0.7'}).siblings('li').css({'opacity':'0.4'});
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="jd">
+			<div class="box">
+				<img src="img/j1.jpg"/>
+				<img src="img/j2.jpg"/>
+				<img src="img/j3.png"/>
+				<img src="img/j4.jpg"/>
+				<img src="img/j5.jpg"/>
+				<img src="img/j1.jpg"/>
+			</div>
+			<ul>
+				<li style="opacity: 0.7;">洁净大品</li>
+				<li>吃鸡神器</li>
+				<li>魅蓝手机</li>
+				<li>三星手机</li>
+				<li>维达纸品</li>
+			</ul>
+		</div>
+	</body>
+</html>

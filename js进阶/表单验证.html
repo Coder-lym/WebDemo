@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>表单验证</title>
+		<style type="text/css">
+			form{
+				width: 400px;
+				margin: 150px auto;
+				border: 1px solid #CCCCCC;
+			}
+			form h3{
+				text-align: center;
+				margin: 10px;
+			}
+			form p{
+				text-align: center;
+			}
+			.error_msg{
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+		//校验用户名是否符合正则表达式
+		function check_name(){
+			var name=document.getElementById("name");
+			var name_msg=document.getElementById("name_msg");
+			//获取文本框的值
+			var value_n=name.value;
+			//编写正则表达式
+			var reg_n=/^\w{3,12}$/;
+			if (!reg_n.test(value_n)) {
+				//如果不匹配，增加错误样式
+				name_msg.className="error_msg";
+				return false;
+			}else{
+				//如果匹配，移除错误样式
+				name_msg.className="";
+				return true;
+			}
+		}
+		
+		//校验密码是否符合正则表达式
+		function check_pwd(){
+			var pwd=document.getElementById("pwd");
+			var pwd_msg=document.getElementById("pwd_msg");
+			//获取文本框的值
+			var value_p=pwd.value;
+			//编写正则表达式
+			var reg_p=/^\w{6,12}$/;
+			if (!reg_p.test(value_p)) {
+				//如果不匹配，增加错误样式
+				pwd_msg.className="error_msg";
+				return false;
+			}else{
+				//如果匹配，移除错误样式
+				pwd_msg.className="";
+				return true;
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<!--
+        	onsubmit是表单提交事件，在点击提交按钮时触发；
+        	触发时先调用onsubmit内的方法，若该方法返回true则会提交表单，返回false则不提交；
+        	即，此处声明的方法可以起到拦截提交的作用。
+        -->
+		<form action="" method="post" onsubmit="return (check_name()+check_pwd())==2">
+			<h3>注册</h3>
+			<p>账号：<input type="text" id="name" onblur="check_name()" />&nbsp;&nbsp;&nbsp;<span id="name_msg">3-12位字符</span></p>
+			<p>密码：<input type="password" id="pwd" onblur="check_pwd()" />&nbsp;&nbsp;&nbsp;<span id="pwd_msg">6-12位字符</span></p>
+			<p><input type="submit" value="提交"/></p>
+		</form>
+	</body>
+</html>

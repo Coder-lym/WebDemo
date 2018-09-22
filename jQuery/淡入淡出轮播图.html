@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#jd{
+				width: 790px;
+				height: 340px;
+				border: 1px solid black;
+				margin: 50px auto;
+				position: relative;
+			}
+			#jd img{
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: none;
+			}
+			#jd ul{
+				position: absolute;
+                left: 315px;
+                bottom: 30px;
+			}
+			#jd ul li{
+				list-style: none;
+				width: 12px;
+				height: 12px;
+				background: white;
+				float: left;
+				margin-right: 25px;
+				border-radius: 6px;
+			}
+		</style>
+		<!--<script type="text/javascript">
+			window.onload=function(){
+				var c=0;
+				var jd=document.getElementById("jd");
+				var imgs=jd.getElementsByTagName('img');
+				var lis=jd.getElementsByTagName('li');
+				
+				function run(){  //自动切换函数
+					c++;
+					if (c==5) {
+						c=0;
+					}
+					for (var i=0;i<5;i++) {
+						imgs[i].style.display='none';
+						lis[i].style.background='white';
+					}
+					imgs[c].style.display='block';
+					lis[c].style.background='red';
+				}
+				
+				var timer=setInterval(run,2000);
+				
+				for (var i=0;i<lis.length;i++) {
+					lis[i].xuhao=i;
+					lis[i].onmousemove=function(){
+						c=this.xuhao;
+						clearInterval(timer);
+						for (var i=0;i<5;i++) {
+						imgs[i].style.display='none';
+						lis[i].style.background='white';
+					 }
+						imgs[c].style.display='block';
+						lis[c].style.background='red';
+					}
+					
+					lis[i].onmouseout=function(){
+						timer=setInterval(run,2000);
+					}
+				}
+			}
+		</script>-->
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var c=0;
+				function run(){
+					c++;
+					if (c==5) {
+						c=0;
+					}
+					$("#jd img").eq(c).fadeIn(1000).siblings('img').fadeOut(1000);
+					$("#jd ul li").eq(c).css({'background':'red'}).siblings('li').css({'background':'white'});
+				}
+				var timer=setInterval(run,3000)
+				$("#jd ul li").mouseenter(function(){
+					clearInterval(timer);
+					c=$(this).index();
+					$("#jd img").eq(c).stop().fadeIn(500);
+					$("#jd img").eq(c).siblings('img').stop().fadeOut(500);
+					$("#jd ul li").eq(c).css({'background':'red'}).siblings('li').css({'background':'white'});
+				})
+				$("#jd ul li").mouseleave(function(){
+					timer=setInterval(run,3000)
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="jd">
+			<img src="img/j1.jpg" style="display: block;"/>
+			<img src="img/j2.jpg"/>
+			<img src="img/j3.png"/>
+			<img src="img/j4.jpg"/>
+			<img src="img/j5.jpg"/>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
